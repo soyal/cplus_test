@@ -2,9 +2,9 @@
 #include <vector>
 #include <iterator>
 
-using std::vector;
 using std::begin;
 using std::end;
+using std::vector;
 
 // int main()
 // {
@@ -54,13 +54,46 @@ using std::end;
 //   }
 // }
 
+// int main()
+// {
+//   int ia[] = {0,1,2,3};
+//   int *f = begin(ia);
+//   int *last = end(ia);
+
+//   for(;f != last;f++) {
+//     std::cout << *f << std::endl;
+//   }
+// }
+
+// int main()
+// {
+//   int arr[] = {0,1,2,3,4,5};
+//   int *p = &arr[2];
+//   int num1 = p[0]; // 2
+//   int num2 = p[2]; // 4
+
+//   std::cout << "num1:" << num1 << std::endl;
+//   std::cout << "num2:" << num2 << std::endl;
+// }
+
+// 多维数组
 int main()
 {
-  int ia[] = {0,1,2,3};
-  int *f = begin(ia);
-  int *last = end(ia);
+  int arr[3][4] = {
+    {1, 2, 3, 4},
+    {5, 6, 7, 8},
+    {9, 10, 11, 12}
+  };
 
-  for(;f != last;f++) {
-    std::cout << *f << std::endl;
+  // for(auto &row:arr) {
+  //   for(auto col:row) {
+  //     std::cout << col << std::endl;
+  //   }
+  // }
+
+  for(auto begin1 = begin(arr); begin1 != end(arr);begin1++) {
+    for(auto begin2 = begin(*begin1);begin2 != end(*begin1);begin2++) {
+      std::cout << *begin2 << std::endl;
+    }
   }
 }
