@@ -24,18 +24,32 @@
 // }
 
 /** 局部静态变量 */
-int count_calls()
-{
-  static int ctr = 0;
-  return ctr++;
-}
+// int count_calls()
+// {
+//   static int ctr = 0;
+//   return ctr++;
+// }
 
-int main() {
-  int res;
+// int main() {
+//   int res;
 
-  for(int i=0;i<10;i++) {
-    res = count_calls();
-  }
+//   for(int i=0;i<10;i++) {
+//     res = count_calls();
+//   }
 
-  std::cout << res << std::endl;
-}
+//   std::cout << res << std::endl;
+// }
+
+// 6.2.1 传值参数
+// void func(int &num)
+// {
+//   num = 3;
+// }
+
+// int main() 
+// {
+//   int num = 1;
+//   func(num);
+
+//   std::cout << num << std::endl;
+// }
