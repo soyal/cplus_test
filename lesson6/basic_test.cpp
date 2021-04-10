@@ -1,4 +1,7 @@
 #include <iostream>
+#include <string>
+
+using std::string;
 
 // int fact(int val)
 // {
@@ -53,3 +56,48 @@
 
 //   std::cout << num << std::endl;
 // }
+
+// void exchange(int &num1, int &num2) {
+//   int temp = num1;
+//   num1 = num2;
+//   num2 = temp;
+// }
+
+// int main()
+// {
+//   int a = 1;
+//   int b = 2;
+//   exchange(a, b);
+//   std::cout << a << std::endl;
+//   std::cout << b << std::endl;
+// }
+
+
+// 数组形参
+// void func(const int*); // 等于 void func(const int[])
+
+// void exchangePointer(int *&p1, int *&p2) {
+//   auto temp = p1;
+//   p1 = p2;
+//   p2 = temp;
+// }
+// int main()
+// {
+//     int a = 1;
+//     int b = 2;
+//     int *p1 = &a;
+//     int *p2 = &b;
+
+//     exchangePointer(p1, p2);
+//     std::cout << *p1 << std::endl;
+//     std::cout << *p2 << std::endl;
+// }
+
+int main(int argc, char* argv[])
+{
+  std::cout << "argc: " << argc << std::endl;
+
+  for(int i=0;i<argc;i++) {
+    std::cout << argv[i] << std::endl;
+  }
+}
