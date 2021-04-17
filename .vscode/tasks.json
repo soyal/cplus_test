@@ -1,23 +1,43 @@
 {
   "version": "2.0.0",
   "tasks": [
-      {
-          "label": "Build with Clang",//这个任务的名字在launch.json最后一项配置
-          "type": "shell",
-          "command": "clang++",
-          "args": [
-              //"test.cpp",这里是官方写法，不具有普遍性，注意两个配置文件的统一性即可
-              "${file}",
-              "-std=c++11",
-              "-o",
-              //"test.out",
-              "${fileDirname}/${fileBasenameNoExtension}",
-              "--debug"
-          ],
-          "group": {
-              "kind": "build",
-              "isDefault": true
-          }
+    {
+      "label": "Build with Clang", //这个任务的名字在launch.json最后一项配置
+      "type": "shell",
+      "command": "clang++",
+      "args": [
+        //"test.cpp",这里是官方写法，不具有普遍性，注意两个配置文件的统一性即可
+        "${file}",
+        "-std=c++11",
+        "-o",
+        //"test.out",
+        "${fileDirname}/${fileBasenameNoExtension}",
+        "--debug"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
       }
+    },
+    {
+      "type": "cppbuild",
+      "label": "win_cpp",
+      "command": "F:/software/MinGW/mingw64/bin/g++.exe",
+      "args": [
+        "-g",
+        "${file}",
+        "-o",
+        "${fileDirname}\\${fileBasenameNoExtension}.exe"
+      ],
+      "options": {
+        "cwd": "F:/software/MinGW/mingw64/bin"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "编译器: F:/software/MinGW/mingw64/bin/g++.exe"
+    }
   ]
 }
