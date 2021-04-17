@@ -1,6 +1,6 @@
 #include <iostream>
 
-extern int global_int;
+extern int global_int; // 仅仅是生命global_int，而非定义,global_int是在其他文件中有声明
 
 // int main() {
 //   int a = 0;

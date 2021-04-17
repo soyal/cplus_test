@@ -10,7 +10,11 @@ using namespace std;
 // struct默认的访问权限是public，即你可以假定，在struct代码块的开头会隐含一个public，而class默认是private
 class Sales_data
 {
-  public:
+  // 使用friend的关键字可以将非成员函数声明为友元，允许其访问非public的成员变量
+  friend Sales_data add(const Sales_data &lhs, const Sales_data &rhs);
+  friend istream &read(istream &is, Sales_data &item);
+  friend ostream &print(ostream &os, const Sales_data &item);
+public:
   // 构造函数(默认)
   Sales_data() = default;
   // 构造函数初始值列表
@@ -21,12 +25,6 @@ class Sales_data
     read(is, *this);
   }
 
-  string bookNo;
-
-  unsigned units_sold = 0;
-
-  double revenue = 0.0;
-
   // const修饰成员函数，如果不用const修饰，那么当实例为const的时候，用点运算符调用成员函数会报错
   string isbn() const
   {
@@ -36,6 +34,14 @@ class Sales_data
   Sales_data &combine(const Sales_data &);
 
   double avg_price() const;
+
+private:
+
+  string bookNo;
+
+  unsigned units_sold = 0;
+
+  double revenue = 0.0;
 };
 
 Sales_data add(const Sales_data &, const Sales_data &);
@@ -93,5 +99,5 @@ int main()
   double c = 1.2;
   const Sales_data d1 = Sales_data(a, b, c);
 
-  cout << d1.bookNo << endl;
+  cout << "123" << endl;
 }
