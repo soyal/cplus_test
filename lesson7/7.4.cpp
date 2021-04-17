@@ -10,4 +10,4 @@ class Account {
 
     // 在这里声明Money，前面的balance的声明中的返回值中的Money是获取不到这个声明的
     typedef double Money;
-}
+};

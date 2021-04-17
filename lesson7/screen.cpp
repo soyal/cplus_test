@@ -40,7 +40,7 @@ private:
   pos cursor = 0;
   pos height = 0, width = 0;
   std::string contents;
-  mutable pos access_ctr;
+  mutable pos access_ctr; // 声明为mutable（可变成员）的变量，即使是在const的成员函数内部，也能被更改
 
   void do_display(std::ostream &os) const
   {
