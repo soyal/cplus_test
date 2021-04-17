@@ -7,20 +7,17 @@ using std::string;
 
 class Window_mgr
 {
+public:
+  using ScreenIndex = std::vector<Screen>::size_type;
+  void clear(ScreenIndex);
 
 private:
   // 单引号表示char，双引号表示字符串...
   std::vector<Screen> screens{Screen(30, 40, ' ')};
 };
 
-string func(string& s) {
-  return s;
-}
+void Window_mgr::clear(ScreenIndex si) {
+  Screen &s = screens[si];
 
-int main()
-{
-  string a = "aaabbb";
-  func(a) = "llll";
-
-  std::cout << "aa: " << a << std::endl;
+  s.contents = string(s.height * s.width, ' ');
 }
