@@ -62,46 +62,46 @@ int main()
   // std::cout << *deleted << std::endl; // 2
 
   // 练习9.26
-  int ia[] = {0, 1, 1, 2, 3, 5, 8, 13, 21, 55, 89};
+  // int ia[] = {0, 1, 1, 2, 3, 5, 8, 13, 21, 55, 89};
 
-  vector<int> vec(ia, std::end(ia));
-  list<int> lst(ia, std::end(ia));
+  // vector<int> vec(ia, std::end(ia));
+  // list<int> lst(ia, std::end(ia));
 
-  for (auto bg = vec.begin(); bg != vec.end();)
-  {
-    if (*bg % 2 == 0)
-    {
-      bg = vec.erase(bg);
-    }
-    else
-    {
-      bg++;
-    }
-  }
+  // for (auto bg = vec.begin(); bg != vec.end();)
+  // {
+  //   if (*bg % 2 == 0)
+  //   {
+  //     bg = vec.erase(bg);
+  //   }
+  //   else
+  //   {
+  //     bg++;
+  //   }
+  // }
 
-  std::cout << "vec: ";
-  for (auto &num : vec)
-  {
-    std::cout << num << " ";
-  }
-  std::cout << std::endl;
+  // std::cout << "vec: ";
+  // for (auto &num : vec)
+  // {
+  //   std::cout << num << " ";
+  // }
+  // std::cout << std::endl;
 
-  for (auto bg = lst.begin(); bg != lst.end();)
-  {
-    if (*bg % 2 != 0)
-    {
-      bg = lst.erase(bg);
-    }
-    else
-    {
-      bg++;
-    }
-  }
+  // for (auto bg = lst.begin(); bg != lst.end();)
+  // {
+  //   if (*bg % 2 != 0)
+  //   {
+  //     bg = lst.erase(bg);
+  //   }
+  //   else
+  //   {
+  //     bg++;
+  //   }
+  // }
 
-  std::cout << "lst: ";
-  for (auto &num : lst)
-  {
-    std::cout << num << " ";
-  }
-  std::cout << std::endl;
+  // std::cout << "lst: ";
+  // for (auto &num : lst)
+  // {
+  //   std::cout << num << " ";
+  // }
+  // std::cout << std::endl;
 }
